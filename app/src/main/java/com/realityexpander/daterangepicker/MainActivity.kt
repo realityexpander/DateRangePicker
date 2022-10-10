@@ -44,26 +44,28 @@ class MainActivity : AppCompatActivity() {
         // Color Picker from: https://github.com/kristiyanP/colorpicker
         // Other color pickers: https://ourcodeworld.com/articles/read/932/top-10-best-android-color-picker-libraries
 
-        val colorPicker = ColorPicker(this)
-        colorPicker.show()
-        colorPicker.setOnChooseColorListener(object : ColorPicker.OnChooseColorListener {
-            override fun onChooseColor(position: Int, color: Int) {
-                if (color == 0) {
-                    binding.tvRangeDate.text =
-                        "Color: none selected"
+        ColorPicker(this).apply {
+            setOnChooseColorListener(object : ColorPicker.OnChooseColorListener {
+                override fun onChooseColor(position: Int, color: Int) {
+                    if (color == 0) {
+                        binding.tvRangeDate.text =
+                            "Color: none selected"
 
-                    return
+                        return
+                    }
+
+                    binding.tvRangeDate.text =
+                        "Color: ${java.lang.Integer.toHexString(color).uppercase(Locale.US)}\n"
                 }
 
-                binding.tvRangeDate.text =
-                    "Color: ${java.lang.Integer.toHexString(color).uppercase(Locale.US)}\n"
-            }
+                override fun onCancel() {
+                    binding.tvRangeDate.text =
+                        "Color: cancelled"
+                }
+            })
 
-            override fun onCancel() {
-                binding.tvRangeDate.text =
-                    "Color: cancelled"
-            }
-        })
+            show()
+        }
     }
 
 
