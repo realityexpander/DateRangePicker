@@ -1,4 +1,4 @@
-package com.bersyte.daterangepicker
+package com.realityexpander.daterangepicker
 
 import org.junit.Test
 

@@ -21,13 +21,33 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/date_range_picker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="87dp"
-        android:text="Show Dialog"
+        android:text="Show Date Range Picker"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRangeDate" />
+
+    <Button
+        android:id="@+id/date_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Show Date Picker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_range_picker" />
+
+    <Button
+        android:id="@+id/pick_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Show Color Picker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_picker" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
